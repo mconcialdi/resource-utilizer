@@ -7,6 +7,8 @@ interface PhaseMeta {
   defaultDays: number;
   // Roles that typically own this phase (used to suggest assignees).
   roles: Role[];
+  // Default target headcount for this phase (used to compare scenario staffing).
+  defaultTarget: number;
 }
 
 export const PHASE_META: Record<PhaseType, PhaseMeta> = {
@@ -16,6 +18,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-violet-500 border-violet-700',
     defaultDays: 10,
     roles: ['FE', 'BE'],
+    defaultTarget: 2,
   },
   Coding: {
     label: 'Coding',
@@ -23,6 +26,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-blue-500 border-blue-700',
     defaultDays: 12,
     roles: ['FE', 'BE'],
+    defaultTarget: 2,
   },
   CodeReviewFE: {
     label: 'Code Review — FE',
@@ -30,6 +34,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-cyan-500 border-cyan-700',
     defaultDays: 2,
     roles: ['FE'],
+    defaultTarget: 1,
   },
   CodeReviewBE: {
     label: 'Code Review — BE',
@@ -37,6 +42,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-teal-500 border-teal-700',
     defaultDays: 2,
     roles: ['BE'],
+    defaultTarget: 1,
   },
   E2E: {
     label: 'E2E Testing',
@@ -44,6 +50,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-amber-500 border-amber-700',
     defaultDays: 4,
     roles: ['QA'],
+    defaultTarget: 1,
   },
   Signoff: {
     label: 'Signoffs (CC/QA · TLSO · BLSO)',
@@ -51,6 +58,7 @@ export const PHASE_META: Record<PhaseType, PhaseMeta> = {
     color: 'bg-emerald-500 border-emerald-700',
     defaultDays: 2,
     roles: ['BE', 'FE'],
+    defaultTarget: 1,
   },
 };
 
